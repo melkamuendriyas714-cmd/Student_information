@@ -44,7 +44,7 @@ public:
 	 }
     double getGpa() const {
 	 return gpa; 
-	 }
+	}
 
     void setData();
     void printData(StudentType student[]);
