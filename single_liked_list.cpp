@@ -57,14 +57,87 @@ current=Head;
 while(current->next!=NULL)
 {
   current=current->next;
+	
 }
 current->next=temp;
 cout<<"\n The Student information is successfully Stored at the End";
 }
 
-void Add_Information_At_Specific_Position (int pos)
+void Add_Information_At_Specific_Position (int position)
 {
-  
+	 StudentType*temp=new StudentType;
+ StudentType*current,prev;
+	cout<<"\nEnter your name";
+	cin>>temp->name;
+	cout<<"\n Enter your ID Number";
+	cin>>temp->Id;
+	cout<<"\n Enter youor Department ";
+	cin>>temp->Department;
+	cout<<"\n Enter your GPA ";
+	cin>>temp->GPA;
+  temp->next=NULL;
+if (Head==NULL)
+{
+Head=temp;
+}
+else 
+{
+current=Head;
+int i=0;
+while (i<position)
+{
+ prev=current;
+current=current->next;
+	i++;
+}
+prev->next=temp;
+temp->next=current;
+}
+cout<<"\n The Student Information is successfully Storde at index"<<postion;
+}
+
+void Delete_Iformation_From_Start ();
+
+StudentType*temp;
+if (Head==NULL)
+{
+cout<<"\n The List is empty";
+}
+else 
+{
+temp=Head;
+Heade=Heade->next;
+delete temp;
+}
+cout <<"\n The Student Information is successfully Deleted from the first position ";
+}
+void Delete_Information_From_End ()
+{
+	StudentType*current,temp;
+if (Head==NULL)
+{
+cout<<"\n The List is empty";
+}
+else 
+{
+current=Head;
+while (current->next!=NULL)
+{
+	temp=current;
+	current=current->next;
+}
+temp->next=NULL;
+delete current;
+
+
+
+
+
+
+
+
+
+
 
 
 
